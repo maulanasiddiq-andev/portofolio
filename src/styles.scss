@@ -1,1 +1,63 @@
-/* You can add global styles to this file, and also import other style files */
+/* Global styles */
+:root {
+    --glass-bg-light: rgba(255, 255, 255, 0.7);
+    --glass-bg-dark: rgba(33, 37, 41, 0.7);
+    --glass-border-light: rgba(255, 255, 255, 0.2);
+    --glass-border-dark: rgba(255, 255, 255, 0.1);
+    --glass-blur: blur(10px);
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+[data-bs-theme="dark"] {
+    --navbar-bg: var(--glass-bg-dark);
+    --navbar-border: var(--glass-border-dark);
+}
+
+[data-bs-theme="light"] {
+    --navbar-bg: var(--glass-bg-light);
+    --navbar-border: var(--glass-border-light);
+}
+
+.glass-nav {
+    backdrop-filter: var(--glass-blur);
+    -webkit-backdrop-filter: var(--glass-blur);
+    background-color: transparent;
+    transition: background-color 0.3s ease, backdrop-filter 0.3s ease;
+}
+
+.glass-nav.scrolled {
+    background-color: var(--navbar-bg) !important;
+    border-bottom: 1px solid var(--navbar-border);
+}
+
+/* Ensure background color in collapsed mode always */
+@media (max-width: 991.98px) {
+    .glass-nav {
+        background-color: var(--navbar-bg) !important;
+    }
+}
+
+.section-padding {
+    padding: 80px 0;
+}
+
+.progress-bar-segment {
+    height: 10px;
+    width: 18%;
+    margin-right: 2%;
+    border-radius: 2px;
+    background-color: var(--bs-secondary-bg);
+    display: inline-block;
+}
+
+.progress-bar-segment.active {
+    background-color: var(--bs-primary);
+}
+
+html {
+    scroll-behavior: smooth;
+}
