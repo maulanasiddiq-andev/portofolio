@@ -132,8 +132,10 @@
           <div class="card-footer bg-transparent border-0 p-4 pt-0 d-flex gap-2">
             <a [href]="project.repoLink" target="_blank" class="btn btn-outline-secondary btn-sm rounded-pill"><i
                 class="bi bi-github me-1"></i> Repository</a>
-            <a [href]="project.demoLink" target="_blank" class="btn btn-primary btn-sm rounded-pill"><i
-                class="bi bi-box-arrow-up-right me-1"></i> Live Demo</a>
+            <a *ngIf="project.demoLink" [href]="project.demoLink" target="_blank"
+              class="btn btn-primary btn-sm rounded-pill"><i class="bi bi-box-arrow-up-right me-1"></i> Live Demo</a>
+            <a *ngIf="project.documentationLink" [href]="project.documentationLink" target="_blank"
+              class="btn btn-primary btn-sm rounded-pill"><i class="bi bi-file-earmark-text me-1"></i> Documentation</a>
           </div>
         </div>
       </div>
@@ -171,7 +173,7 @@
               <h5 class="fw-bold mb-1">{{edu.degree}}</h5>
               <h6 class="text-primary mb-2">{{edu.university}}</h6>
               <p class="mb-1 text-muted">{{edu.major}}</p>
-              <p class="text-muted small mb-0"><i class="bi bi-calendar-check me-1"></i> {{edu.date}}</p>
+              <p class="text-muted small mb-0"><i class="bi bi-calendar3 me-1"></i> {{edu.date}}</p>
             </div>
           </div>
         </div>

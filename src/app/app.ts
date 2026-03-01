@@ -1,5 +1,6 @@
 import { Component, HostListener } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { Project } from './interfaces/project_interface';
 
 @Component({
   selector: 'app-root',
@@ -47,54 +48,64 @@ export class App {
     { name: 'Mandarin Chinese', proficiency: 3 },
   ];
 
-  projects = [
+  projects: Project[] = [
     {
-      title: 'E-Commerce Platform',
-      description: 'A full-featured scalable e-commerce platform with a modern UI.',
-      techStack: ['Angular', 'Node.js', 'PostgreSQL', 'Bootstrap'],
-      features: ['User Authentication', 'Shopping Cart', 'Payment Integration'],
-      repoLink: 'https://github.com/',
-      demoLink: 'https://demo.com/'
+      title: 'Everyday Quiz - Mobile App',
+      description: 'The frontend application for the quiz platform, designed for a seamless cross-platform experience on iOS and Android. It focuses on user engagement, interactive exam interfaces, and intuitive quiz creation.',
+      techStack: ['Flutter', 'Dart', 'Riverpod', 'Go Router', 'Dio', 'JSON Serialization', 'Mistral AI'],
+      features: [
+        'Secure Authentication with Google Sign-In and OTP', 
+        'Interactive Exam Interface with countdown timers, progress monitoring, and drawer navigation', 
+        'Step-by-step quiz creation with rich media support (image uploads)',
+        'AI-powered quiz generation assistant'
+      ],
+      repoLink: 'https://github.com/maulanasiddiq-andev/quiz-app-mobile',
+      // demoLink: 'https://demo.com/'
     },
     {
-      title: 'Task Management App',
-      description: 'A collaborative task management application for teams.',
-      techStack: ['React', 'Firebase', 'Tailwind CSS'],
-      features: ['Real-time updates', 'Drag and drop boards', 'Team roles'],
-      repoLink: 'https://github.com/',
-      demoLink: 'https://demo.com/'
+      title: 'Everyday Quiz - Main API',
+      description: 'The central backend service responsible for managing application logic, user data, quiz content, and secure API endpoints. It serves as the bridge between the mobile app and the infrastructure services.',
+      techStack: ['.NET Core', 'PostgreSQL', 'Redis', 'Entity Framework Core', 'JWT Authentication', 'GCP', 'RabbitMQ (Producer)'],
+      features: [
+        'Dynamic Role-Based Access Control (RBAC)', 
+        'Secure JWT Authentication and OAuth2 integration', 
+        'Asynchronous task delegation via RabbitMQ',
+        'High-performance data caching with Redis'
+      ],
+      repoLink: 'https://github.com/maulanasiddiq-andev/quiz-api',
+      // documentationLink: 'https://documenter.getpostman.com/view/22489595/2sA35J5285'
+    },
+    {
+      title: 'Everyday Quiz - Worker Service',
+      description: 'A background consumer service designed for asynchronous processing to offload heavy tasks from the Main API, ensuring high system availability and responsiveness.',
+      techStack: ['.NET Core', 'RabbitMQ (Consumer)', 'GCP'],
+      features: [
+        'Asynchronous OTP email processing via message broker', 
+        'Real-time push notification delivery upon quiz completion'
+      ],
+      repoLink: 'https://github.com/maulanasiddiq-andev/quiz-api-worker',
     }
   ];
 
   experiences = [
     {
-      company: 'Tech Solutions Inc.',
-      title: 'Senior Frontend Developer',
-      date: 'Jan 2022 - Present',
+      company: 'inovasy.com',
+      title: 'Software Engineer Intern',
+      date: 'Mar 2024 - May 2025',
       accomplishments: [
-        'Developed interactive UI components using Angular',
-        'Improved page loading speed by 30%',
-        'Mentored junior developers and led code reviews'
-      ]
-    },
-    {
-      company: 'Digital Creations',
-      title: 'Web Developer',
-      date: 'Mar 2019 - Dec 2021',
-      accomplishments: [
-        'Built responsive web applications for various clients',
-        'Integrated RESTful APIs and managed application state',
-        'Optimized database queries decreasing load times'
+        'Integrated WhatsApp API to enhance employee–customer communication',
+        'Developed a Task Management module to monitor employee daily task completion',
+        'Redesigned application UI using Angular 15 and Bootstrap to improve usability and interface consistency'
       ]
     }
   ];
 
   education = [
     {
-      degree: 'Bachelor of Science',
-      university: 'State University of Technology',
-      major: 'Computer Science',
-      date: 'Graduated: May 2019'
+      degree: 'Bachelor of Arabic Literature',
+      university: 'LIPIA Jakarta',
+      major: 'Arabic Language and Literature',
+      date: 'Jan 2023 - Dec 2026 (expected)'
     }
   ];
 
