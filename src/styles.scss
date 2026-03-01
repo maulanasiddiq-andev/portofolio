@@ -61,3 +61,28 @@ html {
     scroll-behavior: smooth;
     overflow-x: hidden;
 }
+
+/* Card hover effects */
+.card-lift {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card-lift:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.175) !important;
+}
+
+[data-bs-theme="dark"] .card-lift:hover {
+    box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.5) !important;
+}
+
+/* Badge hover effects */
+.skill-badge {
+    transition: transform 0.2s ease, background-color 0.2s ease, color 0.2s ease;
+}
+
+.skill-badge:hover {
+    transform: translateY(-3px) scale(1.05);
+    background-color: var(--bs-primary) !important;
+    color: var(--bs-white) !important;
+}
