@@ -31,7 +31,7 @@ EXPOSE 80
 # Configure Nginx to route all requests to index.html (SPA routing)
 RUN rm /etc/nginx/conf.d/default.conf
 RUN echo "server { \
-    listen 80; \
+    listen 8080; \
     location / { \
         root /usr/share/nginx/html; \
         index index.html index.htm; \
